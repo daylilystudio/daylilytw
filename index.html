@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="p:domain_verify" content="11d19277467db05b6817cde9cc115552" /><!--Pinterest tag-->
+    <meta name="author" content="Daylily" />
+    <meta name="description" content="玳力力的插畫作品網站，收錄了玳力力的角色設計、圖像創作、商業合作、LINE貼圖等作品。" />
+    <meta name="keywords" content="玳力力,插畫設計,手繪插畫,可愛插畫,插畫家,禮品包裝,文具卡片,節慶送禮,LINE貼圖,金針花,Daylily,illustration,Artist,daylilyart" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:url" content="https://daylily.tw" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="玳力力 Daylily - 插畫設計" />
+    <meta property="og:image" content="https://daylily.tw/webimage.jpg" />
+    <meta property="og:description" content="玳力力的插畫作品網站，收錄了玳力力的角色設計、圖像創作、商業合作、LINE貼圖等作品。" />
+    <meta property="og:site_name" content="玳力力 Daylily - 插畫設計" />
+    <meta property="fb:admins" content="1512525652,100011326152301" />
+    <meta property="fb:app_id" content="212781136172384" />
+    <link href="https://daylily.tw/webimage.jpg" rel="image_src" type="image/jpeg">
+    <title>玳力力 Daylily - 插畫設計</title>
+    <link rel="shortcut icon" type="image/ico" href="img/favorite.png" />
+    <link href="css/style.css?v=9" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
+<!-- Google Tag Manager -->
+<script>
+(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N7S5QGP');
+</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body onload="init01(), init02(), init03(), init04(), init05();">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7S5QGP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="top">↑</div>
+
+<!-- vue start -->
+<div id="app">
+    <header>
+        <div class="logo">
+            <img src="img/logo.svg" alt="">
+            <h1>玳力力 Daylily</h1>
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="#About" class="scrollTop"><img src="img/menu_01.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#Role" class="scrollTop"><img src="img/menu_02.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#Works" class="scrollTop"><img src="img/menu_03.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#Contact" class="scrollTop"><img src="img/menu_04.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#Blog" class="scrollTop"><img src="img/menu_05.png" alt=""></a>
+            </li>
+        </ul>
+        <div class="social">
+            <a v-for="(item,index) in social" :href="item.link" target="_blank" :title="item.name">{{item.name}}</a>
+        </div>
+    </header>
+    <nav>
+        <ul class="menuM">
+            <li>
+                <a href="#About" class="scrollTopM"><img src="img/menuM_01.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#Role" class="scrollTopM"><img src="img/menuM_02.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#Works" class="scrollTopM"><img src="img/menuM_03.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#Contact" class="scrollTopM"><img src="img/menuM_04.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#Blog" class="scrollTopM"><img src="img/menuM_05.png" alt=""></a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide hero_1"> </div>
+                <!-- <div class="swiper-slide hero_2" onclick="window.open('https://shop.daylily.tw')"> </div> -->
+                <div class="swiper-slide hero_3" onclick="window.open('https://pinkoi.daylily.tw')"> </div>
+            </div>
+            <!-- pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section id="About" class="aboutBlockX">
+        <div class="container">
+            <img src="img/title_01.png" alt="About">
+            <div class="about">
+                <img src="img/avatar.png" alt="">
+                <div class="about_txt">
+                    <p>Daylily is from one of my Chinese name ─Hsuan. Hsuan means Daylily in English. The flower just blooms one day, sunrise
+                    flowering, wither at sunset, so-called day-lily in English.</p>
+                    <p>The characters I draw have UglyCat, Mr. Sheep, Truffle, and BiBi. Welcome to my FB、Instagram、Weibo or Blogger, there is
+                    more news about my illustration ☺ !!</p>
+                    <ul>
+                        <li v-for="(item,index) in social">
+                            <a :href="item.link" target="_blank"><img :src="item.icon" :title="item.name"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- aboutBlockX END -->
+
+    <section class="aboutBlockY">
+        <div class="container">
+            <div class="publish">
+                <img src="img/title_01_1.png" alt="">
+                <a href="img/Publish01.png" data-fancybox="publish">
+                    <p>《插畫設計市集 310》 P.122 ⋯⋯⋯⋯⋯⋯⋯<span>⋯⋯⋯⋯⋯⋯⋯⋯⋯ </span>➤</p>
+                </a>
+                <a href="img/Publish02.png" data-fancybox="publish">
+                    <p>《亞洲插畫師年鑑 Collections 2015》 P.166 <span>⋯⋯⋯⋯⋯⋯⋯⋯⋯</span> ➤</p>
+                </a>
+                <a href="img/Publish03.png" data-fancybox="publish">
+                    <p>《2016 亞洲插畫年鑑》 NO.77 ⋯⋯⋯⋯⋯⋯<span>⋯⋯⋯⋯⋯⋯⋯⋯⋯ </span>➤</p>
+                </a>
+                <a href="img/Publish04.png" data-fancybox="publish">
+                    <p>《2019文博創作者特刊》 P.54 ⋯⋯⋯⋯⋯⋯<span>⋯⋯⋯⋯⋯⋯⋯⋯⋯ </span>➤</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- aboutBlockY END -->
+
+    <section id="Role" class="roleBlock">
+        <div class="container">
+            <img src="img/title_02.png" alt="Role">
+            <div class="role">
+                <a href="#role_girl" class="scrollTopRole">
+                    <div class="role_girl"></div>
+                </a>
+                <a href="#role_ugly" class="scrollTopRole">
+                    <div class="role_ugly"></div>
+                </a>
+                <a href="#role_bibi" class="scrollTopRole">
+                    <div class="role_bibi"></div>
+                </a>
+                <a href="#role_sheep" class="scrollTopRole">
+                    <div class="role_sheep"></div>
+                </a>
+                <a href="#role_truffle" class="scrollTopRole">
+                    <div class="role_truffle"></div>
+                </a>
+            </div>
+            <div id="role_girl" class="roleCard">
+                <div id="roleCard_01" class="roleCard_01">
+                    <canvas id="canvas01"></canvas>
+                    <div id="dom_overlay_container01"></div>
+                </div>
+                <h2>玳力力</h2>
+                <p>創作者形象。希望藉由角色們，分享快樂與溫暖給大家，努力變成更好的自己。</p>
+            </div>
+            <div id="role_ugly" class="roleCard">
+                <div id="roleCard_02" class="roleCard_02">
+                    <canvas id="canvas02"></canvas>
+                    <div id="dom_overlay_container02"></div>
+                </div>
+                <h2>阿格里貓</h2>
+                <p>長著不對稱的大小耳，小時總被說醜，後來漸漸成為他與眾不同的特色，孩子脾氣卻善良可愛，是個不可或缺的好夥伴。</p>
+            </div>
+            <div id="role_bibi" class="roleCard">
+                <div id="roleCard_03" class="roleCard_03">
+                    <canvas id="canvas03"></canvas>
+                    <div id="dom_overlay_container03"></div>
+                </div>
+                <h2>小蜜蜂 BiBi</h2>
+                <p>BiBi是隻蜜蜂精靈，曾因尾針斷掉一蹶不振，在尋找自己的過程中遇上奇蹟，原本的尾針變成魔法棒，現在的他擁有讓人快樂的法力！</p>
+            </div>
+            <div id="role_sheep" class="roleCard">
+                <div id="roleCard_04" class="roleCard_04">
+                    <canvas id="canvas04"></canvas>
+                    <div id="dom_overlay_container04"></div>
+                </div>
+                <h2>綿羊先生</h2>
+                <p>綿羊先生有雙陳年黑眼圈，總是很累的樣子，但他有著強大的肩膀，總是保護著大家。有著溫暖人心的性格。</p>
+            </div>
+            <div id="role_truffle" class="roleCard">
+                <div id="roleCard_05" class="roleCard_05">
+                    <canvas id="canvas05"></canvas>
+                    <div id="dom_overlay_container05"></div>
+                </div>
+                <h2>松露哥</h2>
+                <p>綿羊先生的寵物。對世界充滿好奇，記憶像金魚一樣短暫，個性豁達沒什麼煩心事，喜歡待在有人的地方。</p>
+            </div>
+        </div>
+    </section>
+    <!-- roleBlock END -->
+
+    <section id="Works" class="workBlock">
+        <div class="container">
+            <img src="img/title_03.png" alt="">
+        </div>
+        <div class="container">
+            <ul>
+                <li v-for="(card,i) in works" :key="i" :style="{ backgroundImage: 'url('+card.img+')', borderColor:card.linecolor }">
+                    <a @click="openLightbox(i)">
+                        <div class="txt_block" :style="{ backgroundColor: 'rgba(' +card.color+ ',0.9)' }">
+                            <h3>{{card.classify1}}<span>{{card.classify2}}</span></h3>
+                            <p>{{card.name}}</p>
+                            <strong class="view_link">VIEW →</strong>
+                        </div>
+                    </a>
+                </li>
+                <li class="workSpace"></li><!-- 補空格 -->
+                <li class="workSpace"></li><!-- 補空格 -->
+            </ul>
+            <img src="img/separate.png" alt="">
+            <ul class="drawing_gallery">
+                <li v-for="(item,index) in draw"><img :src="item" alt=""></li>
+            </ul>
+        </div>
+    </section>
+        <!-- 燈箱 -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <iframe src=" " width="100%" height="100%"></iframe>
+            </div>
+            <a class="lightbox-close" @click="toggleLightbox()"> </a>
+        </div>
+        <!-- 燈箱 END -->
+    <!-- workBlock END -->
+
+    <div id="Contact" class="contact">
+        <div class="container">
+            <img src="img/title_04.png" alt="">
+            <form class="contactFrame">
+                    <label for="name">你的稱呼*</label>
+                    <input type="name" class="contactForm1" id="name" placeholder="請輸入名稱">
+                    <span class="contactName"></span>
+
+                    <label for="email">你的信箱*</label>
+                    <input type="email" class="contactForm2" id="email" placeholder="id@example.com">
+                    <span class="contactMail"></span>
+
+                    <label for="textareaForm">留言說說話 / 詢問插畫相關案件*</label>
+                    <textarea class="contactForm3" id="textareaForm" rows="6"></textarea>
+                    <span class="contactTxt"></span>
+
+                    <button type="button" class="contactBTN contactSend">送 出</button>
+            </form>
+            <div class="contactSuccess">
+                <p>訊息送出囉，請稍等玳力力的回覆 ：)</p>
+                <button type="button" class="contactBTN contactMore">再次留言</button>
+            </div>
+        </div>
+    </div>
+    <!-- contact END -->
+
+    <div id="Blog" class="blogPost">
+        <div class="container">
+            <img src="img/title_05.png" alt="">
+            <article>
+                <div class="postCard" v-for="(item,i) in blog.slice(0,3)" @click="openLink(item)">
+                    <img :src="item.img[0]" alt="">
+                    <p>
+                        <span class="blogDate">─ {{item.date}} ─</span>
+                        <span class="blogTitle"> {{item.title}} </span>
+                        <a><span class="blogBtn">閱讀文章 →</span></a>
+                    </p>
+                </div>
+            </article>
+            <a href="http://blog.daylily.tw/" target="_blank">去部落格看所有文章 →</a>
+        </div>
+        <div class="blogPost_sheep"></div>
+        <div class="blogPost_girl"></div>
+        <div class="blogPost_truffle"></div>
+        <div class="blogPost_ugly"></div>
+    </div>
+    <!-- Blog END -->
+
+    <footer>
+        <ul class="container">
+            <li class="item linkHere">
+                <h4>✦ Link Here</h4>
+                <a href="img/logo.gif" data-fancybox="logo" data-caption="歡迎使用此LOGO連結本站"><img src="img/logo.gif" alt=""></a>
+                <h5>玳力力插畫創作官網</h5>
+                <div id="likes_box" class="likes_box">
+                    <p><span class="GIVE">Give </span><span class="ME">me a </span>GJ→ </p>
+                    <div class="fb-like" data-href="https://daylily.tw/" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <!--likes_box end-->
+            </li>
+            <li class="item fbPages">
+                <h4>✦ FB Pages</h4>
+                <div class="fb-page" data-href="https://www.facebook.com/daylilyart/" data-tabs="" data-width="" data-height=""
+                    data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/daylilyart/" class="fb-xfbml-parse-ignore"><a
+                            href="https://www.facebook.com/daylilyart/">玳力力 Daylily</a></blockquote>
+                </div>
+            </li>
+            <li class="item newsLetters">
+                <h4>✦ Newsletters</h4>
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="https://daylily.us6.list-manage.com/subscribe/post?u=77ba0d47c3499a78238224339&amp;id=20a300b014"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+                        novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <label for="mce-EMAIL">訂閱玳力力的最新消息，最適合放鬆心情的療癒系插畫</label>
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                    name="b_77ba0d47c3499a78238224339_20a300b014" tabindex="-1" value=""></div>
+                            <input type="submit" value="訂閱 Subscribe →" name="subscribe" id="mc-embedded-subscribe">
+                        </div>
+                    </form>
+                </div>
+                <!--End mc_embed_signup-->
+            </li>
+        </ul>
+        <div class="copyright">
+            <p>Copyright © {{ yearNum }} Daylily. All rights reserved.</p>
+            <p>Web design & illustration by Daylily | <a href="#privacy_policy" class="privacy_policyBtn">隱私權政策</a></p>
+        </div>
+    </footer>
+
+</div>
+<!-- vue end -->
+
+
+<!-- 隱私權政策 -->
+<div id="privacy_policy" class="lightbox">
+    <div class="lightbox-content">
+        <div class="content">
+            <p>非常歡迎您光臨「玳力力 Daylily」（以下簡稱本網站），為了讓您能夠安心使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策，以保障您的權益，請您詳閱下列內容：</p>
+            <h3>一、隱私權保護政策的適用範圍</h3>
+            <p>隱私權保護政策內容，包括本網站如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本網站以外的相關連結網站，也不適用於非本網站所委託或參與管理的人員。</p>
+            <h3>二、個人資料的蒐集、處理及利用方式</h3>
+            <ol>
+                <li>當您造訪本網站或使用本網站所提供之功能服務時，我們將視該服務功能性質，請您提供必要的個人資料，並在該特定目的範圍內處理及利用您的個人資料；非經您書面同意，本網站不會將個人資料用於其他用途。</li>
+                <li>本網站在您使用服務信箱、問卷調查等互動性功能時，會保留您所提供的姓名、電子郵件地址、聯絡方式及使用時間等。</li>
+                <li>於一般瀏覽時，伺服器會自行記錄相關行徑，包括您使用連線設備的IP位址、使用時間、使用的瀏覽器、瀏覽及點選資料記錄等，做為我們增進網站服務的參考依據，此記錄為內部應用，決不對外公佈。</li>
+                <li>為提供精確的服務，我們會將收集的問卷調查內容進行統計與分析，分析結果之統計數據或說明文字呈現，除供內部研究外，我們會視需要公佈統計數據及說明文字，但不涉及特定個人之資料。</li>
+            </ol>
+            <h3>三、資料之保護</h3>
+            <ol>
+                <li>本網站主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，加以保護網站及您的個人資料採用嚴格的保護措施，只由經過授權的人員才能接觸您的個人資料，相關處理人員皆簽有保密合約，如有違反保密義務者，將會受到相關的法律處分。</li>
+                <li>如因業務需要有必要委託其他單位提供服務時，本網站亦會嚴格要求其遵守保密義務，並且採取必要檢查程序以確定其將確實遵守。</li>
+            </ol>
+            <h3>四、網站對外的相關連結</h3>
+            <p>本網站的網頁提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。</p>
+            <h3>五、與第三人共用個人資料之政策</h3>
+            <p>本網站絕不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關，但有法律依據或合約義務者，不在此限。</p>
+            <p>前項但書之情形包括不限於：</p>
+            <ol>
+                <li>經由您書面同意。</li>
+                <li>法律明文規定。</li>
+                <li>為免除您生命、身體、自由或財產上之危險。</li>
+                <li>與公務機關或學術研究機構合作，基於公共利益為統計或學術研究而有必要，且資料經過提供者處理或蒐集著依其揭露方式無從識別特定之當事人。</li>
+                <li>當您在網站的行為，違反服務條款或可能損害或妨礙網站與其他使用者權益或導致任何人遭受損害時，經網站管理單位研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。</li>
+                <li>有利於您的權益。</li>
+                <li>本網站委託廠商協助蒐集、處理或利用您的個人資料時，將對委外廠商或個人善盡監督管理之責。</li>
+            </ol>
+            <h3>六、Cookie之使用</h3>
+            <p>為了提供您最佳的服務，本網站會在您的電腦中放置並取用我們的Cookie，若您不願接受Cookie的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕Cookie的寫入，但可能會導至網站某些功能無法正常執行 。</p>
+            <h3>七、隱私權保護政策之修正</h3>
+            <p>本網站隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
+        </div>
+    </div>
+    <a class="lightbox-close" href="#"> </a>
+</div>
+<!-- 隱私權政策 end -->
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script> <!-- for AJAX -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="js/role01.js"></script>
+<script src="js/role02.js"></script>
+<script src="js/role03.js"></script>
+<script src="js/role04.js"></script>
+<script src="js/role05.js"></script>
+<script src="js/data.js?v=2"></script>
+<script>
+var app = new Vue({
+    el:'#app',
+    data: {
+        social: socialMedia,
+        works: works,
+        draw: drawing,
+        blog: blogPost,
+    },
+    methods: {
+        openLink: function (target) {
+            window.open(target.url)
+        },
+        openLightbox: function(i) {
+            document.querySelector('#lightbox').classList.toggle("active")
+            document.body.classList.toggle("activeLightbox")
+            document.querySelector('#lightbox iframe').setAttribute('src', this.works[i].link )
+        },
+        toggleLightbox: function () {
+            document.querySelector('#lightbox').classList.toggle("active")
+            document.body.classList.toggle("activeLightbox")
+        },
+    },
+    computed: {
+        yearNum() {
+            const now = new Date()
+            return now.getFullYear()
+        }
+    }
+})
+</script>
+<script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script> <!-- 解決 {behavior: 'smooth'} ios不生效 -->
+<script src="js/script.js?v=2"></script>
+
+<!--Facebook JavaScript SDK 設定-->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v11.0&appId=212781136172384&autoLogAppEvents=1"
+    nonce="DcawZtL4"></script>
+<!--Facebook JavaScript SDK 設定結束-->
+
+</html>
