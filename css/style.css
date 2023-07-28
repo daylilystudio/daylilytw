@@ -85,8 +85,7 @@ table {
   box-sizing: border-box;
   transition: 1s ease-in-out;
   overflow: hidden;
-  -ms-scroll-chaining: none;
-      overscroll-behavior: contain;
+  overscroll-behavior: contain;
 }
 .lightbox .lightbox-close {
   display: block;
@@ -342,10 +341,10 @@ header .menu li img:hover {
     display: none;
   }
 }
-header .social a:nth-of-type(3), header .social a:nth-of-type(2), header .social a:nth-of-type(1) {
-  width: 22%;
+header .social a:nth-of-type(2), header .social a:nth-of-type(1) {
+  width: 38%;
   height: 0;
-  padding-bottom: 22%;
+  padding-bottom: 38%;
   background-size: contain;
   background-repeat: no-repeat;
   text-indent: 101%;
@@ -353,24 +352,24 @@ header .social a:nth-of-type(3), header .social a:nth-of-type(2), header .social
   overflow: hidden;
 }
 header .social {
-  width: 13%;
+  width: 8%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 @media (max-width: 1440px) {
   header .social {
-    width: 17%;
+    width: 10%;
   }
 }
 @media (max-width: 768px) {
   header .social {
-    width: 30%;
+    width: 16%;
   }
 }
 @media (max-width: 428px) {
   header .social {
-    width: 40%;
+    width: 25%;
   }
 }
 header .social a:hover {
@@ -380,9 +379,6 @@ header .social a:nth-of-type(1) {
   background-image: url("../img/icon_fb.png");
 }
 header .social a:nth-of-type(2) {
-  background-image: url("../img/icon_twitter.png");
-}
-header .social a:nth-of-type(3) {
   background-image: url("../img/icon_ig.png");
 }
 
@@ -1754,9 +1750,6 @@ footer .item #mc_embed_signup_scroll .email:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
 footer .item #mc_embed_signup_scroll .email::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-footer .item #mc_embed_signup_scroll .email:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
 footer .item #mc_embed_signup_scroll .email::placeholder {

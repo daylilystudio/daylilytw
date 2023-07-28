@@ -2,17 +2,12 @@
 var socialMedia = [
   {
     name: "Facebook",
-    link: "https://fb.com/daylilyart/",
+    link: "https://www.facebook.com/140859939396378",
     icon: "../img/icon_small_fb.png",
   },
   {
-    name: "Twitter",
-    link: "https://twitter.com/daylilyart",
-    icon: "../img/icon_small_twitter.png",
-  },
-  {
     name: "Instagram",
-    link: "https://ig.daylily.tw/",
+    link: "http://instagram.com/daylilyart",
     icon: "../img/icon_small_ig.png",
   },
 ]
