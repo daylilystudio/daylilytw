@@ -29,24 +29,8 @@
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://daylily.tw/#Epaper</loc>
-  <priority>0.40</priority>
-</url>
-<url>
   <loc>https://blog.daylily.tw/</loc>
   <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://daylily.tw/fb/</loc>
-  <priority>0.30</priority>
-</url>
-<url>
-  <loc>https://daylily.tw/ig/</loc>
-  <priority>0.30</priority>
-</url>
-<url>
-  <loc>https://daylily.tw/weibo/</loc>
-  <priority>0.30</priority>
 </url>
 
 </urlset>
