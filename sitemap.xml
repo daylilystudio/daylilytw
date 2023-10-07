@@ -9,28 +9,13 @@
 
 <url>
   <loc>https://daylily.tw/</loc>
-  <lastmod>2021-01-12T12:22:39+00:00</lastmod>
+  <lastmod>2023-07-29T07:44:50+00:00</lastmod>
   <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://daylily.tw/#About</loc>
-  <priority>0.60</priority>
-</url>
-<url>
-  <loc>https://daylily.tw/#Role</loc>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://daylily.tw/#Works</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://daylily.tw/#Contact</loc>
-  <priority>0.50</priority>
 </url>
 <url>
   <loc>https://blog.daylily.tw/</loc>
   <priority>0.90</priority>
 </url>
+
 
 </urlset>
