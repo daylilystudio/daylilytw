@@ -1,0 +1,1378 @@
+@import 'reset';
+@import 'grid';
+
+$brandcolor_1: #66A3E4;
+$brandcolor_2: #D79797;
+$brandcolor_1_light: #DCE7F3;
+$brandcolor_2_light: #FFF9F9;
+$secondary: #7B6660;
+$third: #77C2BD;
+
+
+
+@mixin linkStyle {
+    transition: all .3s;
+    position: relative;
+    top: 0;
+    &:hover {
+        top: -4px;
+    }
+}
+@import 'lightbox';
+
+*{
+    box-sizing: border-box;
+}
+::selection {
+    background-color: rgba(#fff,0);
+    color: rgba(0,0,0,.7)
+}
+
+body{
+    font-family: 'Microsoft JhengHei',Verdana,Arial,Helvetica,sans-serif;
+    background-image: url(../img/bg_blue.jpg);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    margin-top: 120px;
+    @media (max-width:1280px) {
+        margin-top: 100px;
+    }
+    @include padbelow {
+        margin-top: 72px;
+    }
+    @include iphone5 {
+        margin-top: 60px;
+    }
+}
+
+
+.top {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    right: 1.5rem;
+    bottom: 5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    color: #fff;
+    background-color: rgba(#000 , 0.2);
+    cursor: pointer;
+    transition: all .3s;
+    z-index: 10;
+    opacity: 0;
+    &:hover {
+        background-color: rgba(#000 , 0.5);
+    }
+    @include pad {
+        right: 1rem;
+        bottom: 6rem;
+    }
+}
+
+.headerFix{ //捲軸下拉時選單變化
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    background-color: rgba(#fff,0.9);
+    @include pad-pro {
+        border-bottom-right-radius: 30%;
+        border-bottom-left-radius: 30%;
+    }
+}
+header{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    width: 100%;
+    height: 120px;
+    padding: 1rem 1rem 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s;
+    @media (max-width:1280px) {
+        height: 100px;
+        padding: .5rem 1.8rem .5rem 1.5rem;
+    }
+    @include pad-pro {
+        padding: 1.2rem 1.8rem 1rem 1rem;
+    }
+    @include padbelow {
+        height: 72px;
+    }
+    @include iphone6plus {
+        padding: .8rem 1rem .8rem 0rem;
+    }
+    @include iphone5 {
+        height: 60px;
+    }
+    .logo{
+        img{
+            width: 85%;
+        }
+        h1{
+            display: none;
+        }
+        @media (max-width:1280px) {
+            width: 17%;
+        }
+        @include pad-pro {
+            width: 19%;
+        }
+        @include pad {
+            width: 27%;
+            margin-left: 1.2rem;
+        }
+        @include iphone6plus {
+            width: 33%;
+        }
+    }
+    .menu{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        li{
+            height: 100%;
+            margin: 0 .75rem;
+            a{
+                display: block;
+                height: 100%;
+            }
+            img{
+                height: 100%;
+                width: auto;
+                transition: all .2s;
+                position: relative;
+                top: 0;
+                &:hover{
+                    top: -4px;
+                }
+            }
+        }
+        @include pad {
+            display: none;
+        }
+    }
+    %socialBN{
+        width: 38%;
+        height: 0;
+        padding-bottom: 38%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        text-indent: 101%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .social{
+        width: 8%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        @media (max-width:1440px) {
+            width: 10%;
+        }
+        @include pad {
+            width: 16%;
+        }
+        @include iphone6plus {
+            width: 25%;
+        }
+        a:hover {
+            filter: brightness(1.2);
+        }
+        a:nth-of-type(1) {
+            @extend %socialBN;
+            background-image: url('../img/icon_fb.png');
+        }
+        a:nth-of-type(2) {
+            @extend %socialBN;
+            background-image: url('../img/icon_ig.png');
+        }
+    }
+}
+
+//mobile menu
+nav{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient($brandcolor_2,$brandcolor_1);
+    z-index: 10;
+    padding-bottom: calc(constant(safe-area-inset-bottom)*0.6);
+    padding-bottom: calc(env(safe-area-inset-bottom)*0.6);
+    ul{
+        margin-top: .3rem;
+        display: flex;
+        justify-content: space-around;
+        li{
+            width: 20%;
+            a{
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            img{
+                width: 30%;
+                @include iphone6plus {
+                    width: 55%;
+                }
+            }
+        }
+    }
+    @include pad {
+        display: block;
+    }
+}
+.active{
+    background-image: radial-gradient( $brandcolor_2,transparent,transparent);
+}
+
+//common
+.container {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 4rem 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include pad-pro {
+        width: 100%;
+        padding: 2rem 4rem;
+    }
+    @include padbelow {
+        padding: 2rem 2rem;
+    }
+}
+
+.hero {
+    .swiper-container {
+    width: 100%;
+    height: 400px;
+    .swiper-pagination-bullet{
+        width: 35px;
+        height: 6px;
+        border-radius: 3px;
+        margin: 0 2px!important;
+    }
+    .swiper-pagination-bullet-active{
+        background: $brandcolor_2;
+        width: 35px;
+        height: 6px;
+        border-radius: 3px;
+    }
+    @include pad {
+        height: 360px;
+    }
+    @include iphone6plus {
+        height: 240px;
+    }
+    @include iphone5 {
+        height: 180px;
+    }
+    }
+    .swiper-slide{
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    &_1{
+        background-image: url(../img/hero1.jpg);
+        @include pad {
+            background-image: url(../img/hero1_768.jpg);
+            background-size: cover;
+        }
+    }
+    &_2{
+        background-image: url(../img/hero2.jpg);
+        cursor: pointer;
+        @include pad {
+            background-image: url(../img/hero2_768.jpg);
+            background-size: cover;
+        }
+    }
+    &_3{
+        background-image: url(../img/hero3.jpg);
+        cursor: pointer;
+        @include pad {
+            background-image: url(../img/hero3_768.jpg);
+            background-size: cover;
+        }
+    }
+}
+
+.aboutBlockX{
+    width: 100%;
+    background-image: url(../img/bg_paper.png);
+    background-color: #fff;
+    .container>img{
+        width: 35%;
+        margin-bottom: 1rem;
+        @include pad {
+            width: 50%;
+            margin-bottom: 2rem;
+        }
+        @include iphone6plus {
+            width: 75%;
+        }
+    }
+    .about{
+        display: flex;
+        justify-content: space-between;
+        @include iphone6plus {
+            flex-direction: column;
+            align-items: center;
+        }
+        &>img{
+            width: 23%;
+            height: 100%;
+            border: 1px solid $secondary;
+            border-radius: 20px;
+            background-color: rgba(#fff,.5);
+            @include pad {
+                width: 31%;
+            }
+            @include iphone6plus {
+                width: 60%;
+            }
+        }
+        &_txt{
+            width: 72%;
+            display: flex;
+            flex-direction: column;
+            @include pad {
+                width: 64%;
+            }
+            @include iphone6plus {
+                width: 100%;
+                margin-top: .5rem;
+            }
+            p{
+                color: $secondary;
+                font-size: 1.5rem;
+                line-height: 1.5;
+                margin-bottom: 1.5rem;
+                @include pad {
+                    line-height: 1.2;
+                }
+                @include iphone6plus {
+                    font-size: 1.2rem;
+                }
+                @include iphone5 {
+                    font-size: 1rem;
+                }
+            }
+            ul{
+                margin-top: .5rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                li{
+                    margin: 0 .5rem;
+                    color: $brandcolor_1;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    @include iphone6plus {
+                        margin: 0 .3rem;
+                        font-size: 1rem;
+                    }
+                }
+                a{
+                    @include linkStyle
+                }
+                img{
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+}
+.aboutBlockY{
+    width: 100%;
+    background-image: url(../img/bg_paper.png);
+    background-color: $brandcolor_2_light;
+    a{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: $secondary;
+        text-decoration: none;
+        @include linkStyle
+    }
+    .publish{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 99%;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        padding: 3rem 0 2rem;
+        background-color: rgba(#fff,0.75);
+        border-radius: 3rem;
+        position: relative;
+        @include iphone6plus {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding: 2rem 0 1.2rem;
+            border-radius: 2rem;
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+        }
+        @include iphone6 {
+            margin-top: 1.5rem;
+            padding: 1.5rem 0 1rem;
+            border-radius: 1.5rem;
+        }
+        @include iphone5 {
+            background-color: transparent;
+            margin-bottom: -1rem;
+        }
+        &>img{
+            width: 65%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -5.5rem;
+            @include pad {
+                width: 80%;
+                top: -4.5rem;
+            }
+            @include iphone6plus {
+                width: 90%;
+                top: -2.8rem;
+            }
+            @include iphone6 {
+                top: -2.5rem;
+            }
+        }
+        p{
+            white-space: nowrap;
+            font-size: 1.5rem;
+            padding: 1.5rem 0;
+            @include padbelow {
+                font-size: 1rem;
+            }
+            @include iphone6plus {
+                font-size: 0.8rem;
+                padding: .8rem 0;
+            }
+            @include iphone5 {
+                text-shadow: 2px 2px 0px #fff, -2px -2px 0px #fff ,1px 1px 0px #fff, -1px -1px 0px #fff;
+            }
+            span{
+                @include pad {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+%roleSet{
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.roleBlock {
+    width: 100%;
+    background-image: url(../img/bg_cloud.png);
+    background-position: center top;
+    background-size: 100%;
+    @include pad {
+        background-repeat: no-repeat;
+        .container {padding: 2rem 0;}
+    }
+    .container>img{
+        width: 35%;
+        margin-bottom: 1rem;
+        @include pad {
+            width: 50%;
+            margin-bottom: 2rem;
+        }
+        @include iphone6plus {
+            width: 60%;
+        }
+    }
+    .role {
+        width: 100%;
+        height: 830px;
+        margin-bottom: 4rem;
+        position: relative;
+        @include pad {
+            overflow: hidden;
+            height: 880px;
+        }
+        @include iphone6plus {
+            height: 520px;
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+        }
+        @include iphone6 {
+            height: 490px;
+        }
+        &_girl {
+            @extend %roleSet;
+            right: 10rem;
+            top: 0rem;
+            width: 350px;
+            height: 304px;
+            background-image: url(../img/role_01.png);
+            &:hover{
+                background-image: url(../img/role_hover_01.png);
+            }
+            @include pad {
+                right: 7rem;
+            }
+            @include padbelow {
+                right: 1rem;
+            }
+            @include iphone6plus {
+                right: 3rem;
+                width: 200px;
+                height: 173px;
+            }
+            @include iphone6 {
+                right: 1.5rem;
+            }
+            @include iphone5 {
+                right: .5rem;
+            }
+        }
+        &_ugly {
+            @extend %roleSet;
+            left: 4rem;
+            top: 3rem;
+            width: 320px;
+            height: 304px;
+            background-image: url(../img/role_02.png);
+            &:hover{
+                background-image: url(../img/role_hover_02.png);
+            }
+            @include pad {
+                left: -3rem;
+                top: 6rem;
+            }
+            @include iphone6plus {
+                left: -1rem;
+                top: 3rem;
+                width: 183px;
+                height: 173px;
+            }
+            @include iphone6 {
+                left: -2rem;
+            }
+        }
+        &_bibi {
+            @extend %roleSet;
+            right: 2rem;
+            top: 12rem;
+            width: 280px;
+            height: 295px;
+            background-image: url(../img/role_03.png);
+            &:hover{
+                background-image: url(../img/role_hover_03.png);
+            }
+            @include pad {
+                right: -2rem;
+                top: 13rem;
+            }
+            @include iphone6plus {
+                right: -1.5rem;
+                top: 7rem;
+                width: 160px;
+                height: 168px;
+            }
+            @include iphone6 {
+                right: -2.2rem;
+            }
+        }
+        &_sheep {
+            @extend %roleSet;
+            left: 6rem;
+            bottom: 0rem;
+            width: 500px;
+            height: 565px;
+            background-image: url(../img/role_04.png);
+            &:hover{
+                background-image: url(../img/role_hover_04.png);
+            }
+            @include pad {
+                left: 1rem;
+            }
+            @include padbelow {
+                left: -6rem;
+            }
+            @include iphone6plus {
+                left: 0rem;
+                width: 285px;
+                height: 322px;
+            }
+            @include iphone5 {
+                left: -2rem;
+            }
+        }
+        &_truffle {
+            @extend %roleSet;
+            right: 6rem;
+            bottom: 8rem;
+            width: 250px;
+            height: 218px;
+            background-image: url(../img/role_05.png);
+            &:hover{
+                background-image: url(../img/role_hover_05.png);
+            }
+            @include pad {
+                right: 1rem;
+                bottom: 8rem;
+            }
+            @include padbelow {
+                right: -2rem;
+            }
+            @include iphone6plus {
+                right: 0rem;
+                bottom: 6rem;
+                width: 142px;
+                height: 125px;
+            }
+            @include iphone6 {
+                right: -1rem;
+                bottom: 4.5rem;
+            }
+            @include iphone5 {
+                right: -1.5rem;
+            }
+        }
+    }
+}
+.roleCard{
+    width: 450px;
+    padding: 2rem 2em 2.5rem 6rem;
+    margin: 3.5rem 0 3rem 6rem;
+    border-radius: 3rem;
+    background-color: $brandcolor_1_light;
+    color: $secondary;
+    line-height: 1.5;
+    position: relative;
+    z-index: 5;
+    @include padbelow {
+        width: 60%;
+        border-radius: 1.5rem;
+        padding: 1rem 1em 1.5rem 4rem;
+        margin: 3rem 0 2rem 5.5rem;
+    }
+    @include iphone5 {
+        margin: 3rem 0 2rem 5rem;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top: -.8rem;
+        right: -.8rem;
+        width: 100%;
+        height: 100%;
+        border: 2px solid $brandcolor_1_light;
+        border-radius: 3.5rem;
+        @include padbelow {
+            border-radius: 2rem;
+            top: -.5rem;
+            right: -.5rem;
+        }
+    }
+    &_01, &_02, &_03, &_04, &_05{
+        position: absolute;
+        z-index: 5;
+        top: -11rem;
+        right: 14rem;
+        transform: scale(0.6);
+        @include padbelow {
+            right: 8rem;
+            transform: scale(0.5);
+        }
+        @include iphone6plus {
+            top: -11.5rem;
+            right: 1rem;
+            transform: scale(0.45);
+        }
+        @include iphone6 {
+            right: -.5rem;
+            transform: scale(0.4);
+        }
+        @include iphone5 {
+            top: -12rem;
+            right: -3rem;
+        }
+    }
+    h2{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        @include iphone6plus {
+            font-size: 1.5rem;
+        }
+        @include iphone5 {
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+        }
+    }
+    p{
+        font-size: 1.2rem;
+        @include iphone6plus {
+            font-size: 1rem;
+        }
+        @include iphone5 {
+            font-size: .8rem;
+        }
+    }
+}
+
+.workBlock{
+    width: 100%;
+    background-image: url(../img/bg_paper.png);
+    background-color: #fff;
+    .workSpace{
+        border: 0 !important;
+        @include pad {
+            display: none;
+        }
+    }
+    .container:nth-of-type(1)>img {
+        width: 35%;
+        @include pad {
+            width: 50%;
+        }
+        @include iphone6plus {
+            width: 75%;
+        }
+    }
+    .container:nth-of-type(2) {
+        width: 80%;
+        @media ( max-width:1280px ) {
+            width:100%;
+        }
+        @include iphone6plus {
+            padding: 0;
+        }
+        ul:nth-of-type(1) {
+            width: 92%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            @include iphone6plus {
+                width: 85%;
+                justify-content: space-between;
+            }
+            li{
+                cursor: pointer;
+                width: 23%;
+                height: 250px;
+                overflow: hidden;
+                margin-bottom: 2.5rem;
+                border-radius: 20px;
+                background-size: cover;
+                background-position: center center;
+                border-width: 3px;
+                border-style: solid;
+                @include pad {
+                    width: 45%;
+                }
+                @include iphone6plus {
+                    width: 48%;
+                    height: 160px;
+                    margin-bottom: 1.5rem;
+                    border-radius: 15px;
+                }
+            }
+            a{
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: relative;
+                color: #fff;
+                text-decoration: none;
+            }
+            .txt_block{
+                height: 101%;
+                position: absolute;
+                top: calc(250px - 2.5rem);
+                left: -1px;
+                right: -1px;
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items: center;
+                transition: all .3s;
+                @include iphone6plus {
+                    top: calc(160px - 2.5rem);
+                }
+            }
+            h3{
+                height: 2.5rem;
+                line-height: 2.3rem;
+                transition: all .3s;
+            }
+            p{
+                margin: 0 0 1rem 0;
+                font-size: 1.2rem;
+            }
+            strong{
+                padding: .3rem .5rem;
+                border-radius: 1rem;
+                background-color: rgba(0,0,0,.2);
+                transition: all .3s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        li:hover {
+            .txt_block{
+            top: -1px;
+            bottom: -1px;
+            justify-content: center;
+            }
+            h3{
+            height: auto;
+            line-height: 1.5;
+            font-weight: bold;
+            padding: .5rem 1rem;
+            margin-bottom: .5rem;
+            background-color: #fff;
+            color: gray;
+            border-radius: 50%;
+                span{
+                    display: block;
+                }
+            }
+        }
+        &>img {
+            width: 100%;
+            margin: 1rem 0;
+        }
+    }
+    .drawing_gallery{
+        width: 90%;
+        margin:0 0 1.5rem 0;
+        column-count: 3;
+        column-gap: 15px;
+        @include pad {
+            width: 87%;
+        }
+        @include iphone6plus {
+            width: 84%;
+            column-count: 2;
+        }
+        li{
+            list-style:none;
+            padding:0;
+            margin:0 0 15px 0;
+            display:inline-block;
+            filter: grayscale(1);
+            opacity: .7;
+            transition: all .3s;
+            @include pad-pro {
+                filter: grayscale(0);
+                opacity: 1;
+            }
+            &:hover {
+                filter: grayscale(0);
+                opacity: 1;
+            }
+            img{
+                max-width:100%;
+            }
+        }
+    }
+}
+
+.contact{
+    width: 100%;
+    background-image: url(../img/bg_cloud.png);
+    background-position: center top;
+    background-size: 100%;
+    .container>img{
+        width: 35%;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        @include pad {
+            width: 50%;
+        }
+        @include iphone6plus {
+            width: 75%;
+        }
+        @include iphone6 {
+            width: 85%;
+        }
+    }
+    form{
+        color: #fff;
+        width: 60%;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 1280px) {
+            width: 55%;
+        }
+        @include pad {
+            width: 80%;
+        }
+        @include iphone6 {
+            width: 100%;
+        }
+        input, textarea {
+            background-color: rgba(#fff,.3);
+            border: 0;
+            border-radius: .5rem;
+            margin: .5rem 0;
+            padding: .25rem 1rem;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: .1rem;
+            font-size: 1rem;
+            box-shadow: 0 0 8px rgba(#000 , 0.1);
+            &:focus {
+                box-shadow: 0 0 8px rgba(#000 , 0.3);
+                outline: none;
+            }
+        }
+        input {
+            height: 2.5rem;
+        }
+        textarea {
+            font-size: 1.2rem;
+        }
+        span {
+            margin-bottom: 1.2rem;
+            color: #68FFF5;
+            font-size: .9rem;
+            font-weight: bold;
+        }
+    }
+    &BTN {
+        font-size: 1rem;
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: .5rem;
+        border-radius: .5rem;
+        width: 50%;
+        align-self: flex-end;
+        &:hover {
+            background-color: rgba(#000,.25);
+            border-color: transparent ;
+        }
+        &:focus {
+            outline: none;
+        }
+        @include iphone6plus {
+            width: 100%;
+        }
+    }
+    &Success {
+        display: none;
+        flex-direction: column;
+        margin: 4rem 0;
+        p {
+            padding: 2rem 4rem;
+            background-color: rgba(#000,.15);
+            color: #68FFF5;
+            border-radius: .5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 4px rgba(#000,.2);
+            @include iphone6plus {
+                padding: 2rem 2rem;
+            }
+        }
+        button {
+            width: 60%;
+            align-self: center;
+            @include iphone6plus {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.blogPost{
+    width: 100%;
+    background-image: url(../img/bg_paper.png);
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    .container{
+        width: 80%;
+        position: relative;
+        z-index: 5;
+        @media ( max-width:1280px ) {
+            width:100%;
+        }
+        @include iphone6plus {
+            padding: 0;
+        }
+        &>img{
+            width: 45%;
+            margin-bottom: 1rem;
+            @include pad {
+                width: 75%;
+                margin-bottom: 2rem;
+            }
+            @include iphone6plus {
+                width: 95%;
+                margin-top: 2rem;
+            }
+        }
+        &>a{
+            margin-top: 2rem;
+            margin-bottom: 13rem;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid $secondary;
+            text-decoration: none;
+            color: $secondary;
+            font-weight: 700;
+            @include linkStyle
+        }
+    }
+    article{
+        width: 92%;
+        display: flex;
+        justify-content: space-around;
+        @include padbelow {
+            flex-direction: column;
+            width: 87%;
+        }
+        @include iphone6plus {
+            width: 84%;
+        }
+    }
+    .postCard{
+        display: flex;
+        flex-direction: column;
+        width: 31%;
+        margin-bottom: 1.5rem;
+        border: 1px solid $secondary;
+        border-radius: 20px;
+        background-color: rgba(#fff, .6);
+        overflow: hidden;
+        transition: all .3s;
+        cursor: pointer;
+        &:hover {
+            filter: brightness(0.9);
+            .blogBtn{
+                filter: brightness(1.2);
+            }
+        }
+        @include padbelow {
+            width: 100%;
+        }
+        &>p{
+            color: $secondary;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem 3rem;
+            text-align: center;
+            @include pad {
+                padding: 1rem .5rem 2rem;
+            }
+            .blogDate{
+                font-size: 14px;
+            }
+            .blogTitle{
+                margin: .5rem 0 1.5rem;
+                font-size: 1.25rem;
+                font-weight: 700;
+                @include pad-pro {
+                    font-size: 1rem;
+                }
+            }
+            .blogBtn{
+                color: #fff;
+                font-size: 14px;
+                padding: .5rem 1rem;
+                background-color: $brandcolor_2;
+                border-radius: 1.5rem;
+            }
+        }
+        &>img{
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            @include pad-pro {
+                height: 180px;
+            }
+            @include pad {
+                height: 150px;
+            }
+        }
+    }
+    &_sheep, &_girl, &_truffle, &_ugly{
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    &_sheep{
+        left: -2rem;
+        bottom: -15rem;
+        width: 700px;
+        height: 524px;
+        background-image: url(../img/epaper_sheep.png);
+        @media (max-width: 1280px) {
+            left: -5rem;
+        }
+        @include pad-pro{
+            width: 380px;
+            height: 285px;
+            bottom: -8rem;
+            left: -1rem;
+        }
+        @include iphone6plus {
+            width: 255px;
+            height: 190px;
+            bottom: -5.5rem;
+            left: -1.5rem;
+        }
+    }
+    &_girl{
+        right: -5rem;
+        bottom: -9rem;
+        width: 650px;
+        height: 458px;
+        background-image: url(../img/epaper_girl.png);
+        @media (max-width: 1280px) {
+            right: -15rem;
+        }
+        @include pad-pro{
+            width: 350px;
+            height: 246px;
+            right: -3rem;
+            bottom: -4.5rem;
+        }
+        @include iphone6plus {
+            width: 235px;
+            height: 166px;
+            right: -5rem;
+            bottom: -3rem;
+        }
+    }
+    &_truffle{
+        left: 28rem;
+        bottom: -4rem;
+        width: 200px;
+        height: 283px;
+        background-image: url(../img/epaper_truffle.png);
+        @media (max-width: 1280px) {
+            left: 20rem;
+            bottom: -7rem;
+        }
+        @include pad-pro{
+            width: 110px;
+            height: 156px;
+            left: 15rem;
+            bottom: -3rem;
+        }
+        @include iphone6plus {
+            width: 74px;
+            height: 104px;
+            left: 7.5rem;
+            bottom: -2rem;
+        }
+        @include iphone5 {
+            left: 5.5rem;
+            bottom: 0rem;
+        }
+    }
+    &_ugly{
+        right: 27rem;
+        bottom: -6rem;
+        width: 250px;
+        height: 275px;
+        background-image: url(../img/epaper_ugly.png);
+        @media (max-width: 1280px) {
+            right: 20rem;
+        }
+        @include pad-pro{
+            width: 140px;
+            height: 154px;
+            right: 13.5rem;
+            bottom: -2rem;
+        }
+        @include iphone6plus {
+            width: 94px;
+            height: 103px;
+            right: 5.5rem;
+        }
+        @include iphone5 {
+            right: 5rem;
+        }
+    }
+}
+
+footer {
+    background-color: $secondary;
+    .container{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        color: $brandcolor_2;
+        @include padbelow {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .item{
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        width: 29%;
+        overflow: hidden;
+        @include pad-pro {
+            &.linkHere{
+                width: 35%;
+            }
+            &.newsLetters{
+                width: 60%;
+            }
+            &.fbPages{
+                display: none;
+            }
+        }
+        @include pad {
+            &.linkHere{
+                width: 36%;
+            }
+            &.newsLetters{
+                width: 60%;
+            }
+        }
+        @include padbelow {
+            width: 88% !important;
+        }
+        h4{
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding-bottom: .5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid $brandcolor_2;
+        }
+        h5{
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+        }
+        a:hover {
+            filter: brightness(1.2);
+        }
+        .likes_box{
+            display: flex;
+            align-items: center;
+            p{
+                font-size: .9rem;
+                color: #fff;
+                margin-right: 5px;
+                @include pad {
+                    .ME{display: none;}
+                }
+                @include iphone5 {
+                    .GIVE{display: none;}
+                }
+            }
+            .fb-like{
+                margin-left: -1rem;
+                @include padbelow {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        #mc_embed_signup_scroll{
+            display: flex;
+            flex-direction: column;
+            label{
+                color: #fff;
+                @include padbelow {
+                    line-height: 1.8;
+                }
+            }
+            .email{
+                border: 1px solid $brandcolor_2;
+                background-color: transparent;
+                font-size: 1rem;
+                outline: none;
+                margin-top: .5rem;
+                padding: .5rem;
+                color: #fff;
+                &:hover{
+                    background-color: rgba(#fff, .15);
+                }
+                &::placeholder{
+                    color: rgba(#fff, .4);
+                }
+            }
+            #mc-embedded-subscribe{
+                background-color: $brandcolor_2;
+                color: #fff;
+                border: 0;
+                font-size: 1rem;
+                padding-top: .2rem;
+                padding-bottom: .4rem;
+                transition: all .3s;
+                cursor: pointer;
+                -webkit-appearance: none;  /* 移除iOS內建樣式 */
+                &:hover{
+                    filter: brightness(1.15);
+                    text-indent: 1rem;
+                }
+                @include pad-pro {
+                    margin-top: 1rem;
+                }
+            }
+        }
+        // %footer_socialBN{
+        // width: 25%;
+        // height: 0;
+        // padding-bottom: 25%;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+        // text-indent: 101%;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // }
+        // .social{
+        //     width: 100%;
+        //     display: flex;
+        //     justify-content: space-around;
+        //     align-items: center;
+        //     a:nth-of-type(1) {
+        //         background-image: url('../img/iconFooter_fb.png');
+        //         @extend %footer_socialBN;
+        //     }
+        //     a:nth-of-type(2) {
+        //         background-image: url('../img/iconFooter_ig.png');
+        //         @extend %footer_socialBN;
+        //     }
+        //     a:nth-of-type(3) {
+        //         background-image: url('../img/iconFooter_weibo.png');
+        //         @extend %footer_socialBN;
+        //     }
+        // }
+    }
+    .copyright{
+        background-color: $brandcolor_2;
+        color: #fff;
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include pad {
+            padding-bottom: 5rem;
+        }
+        @include iphone6plus {
+            font-size: .8rem;
+            padding-top:1rem;
+        }
+        p{
+            padding: .5rem;
+        }
+    }
+}

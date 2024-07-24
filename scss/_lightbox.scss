@@ -1,0 +1,112 @@
+.lightbox {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    overflow: hidden;
+    z-index: 1000;
+    &.active {
+        opacity: 1;
+        top: 0;
+        bottom: 0;
+    }
+    .lightbox-content {
+        background-color: #fff;
+        width: 90%;
+        height: 85%;
+        margin: auto;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 1rem;
+        max-height: 100%;
+        max-width: 100%;
+        box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        box-sizing: border-box;
+        transition: 1s ease-in-out;
+        overflow: hidden;
+        overscroll-behavior: contain; //捲軸滾動至底時，不影響父元素
+    }
+    .lightbox-close {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        color: #fff;
+        position: absolute;
+        &::before, &::after{
+            content: " ";
+            display: block;
+            height: 25px;
+            width: 1px;
+            background: #fff;
+            position: absolute;
+            right: 1.5rem;
+            top: .75rem;
+            transform: rotate(45deg);
+        }
+        &::after{
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+body.activeLightbox{
+    overflow: hidden !important;
+    touch-action: none;
+}
+
+#privacy_policy {
+    .lightbox-content{
+        background-color: #7B6660;
+    }
+    &:target {
+        opacity: 1;
+        top: 0;
+        bottom: 0;
+    }
+    .content{
+        overflow-y: auto;
+        height: 100%;
+        padding: 1.5rem 1rem 2rem 2rem;
+        line-height: 2;
+        color: #fff;
+        //捲軸底色
+        &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px $secondary;
+        background-color: $secondary;
+        }
+        //捲軸寬度
+        &::-webkit-scrollbar {
+        width: 8px;
+        }
+        //捲軸本體顏色
+        &::-webkit-scrollbar-thumb {
+        background-color: $brandcolor_2;
+        }
+        @include padbelow{
+            padding: 1.5rem .25rem 2rem 1rem;
+        }
+        h3{
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            color: lighten($brandcolor_2, 8);
+            @include padbelow{
+                font-size: 1.1rem;
+            }
+        }
+        ol{
+            list-style: disc;
+            margin-left: 1.5rem;
+        }
+    }
+}
+.privacy_policyBtn{
+    color: #fff;
+    @include linkStyle
+}
